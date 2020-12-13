@@ -213,20 +213,9 @@ class Main extends PluginBase implements Listener {
     public function onPlayerDamage(EntityDamageEvent $event){
 
         $event->setCancelled(true);
+   
     }
-
-    public function BlockBreakEvent(BlockBreakEvent $event){
-
-        $event->setCancelled(true);
-        $event->getPlayer()->sendMessage(TextFormat::RED . "$this->prefix You cannot do that here... :c");
-    }
-
-    public function BlockPlaceEvent(BlockPlaceEvent $event){
-
-        $event->setCancelled(true);
-        $event->getPlayer()->sendMessage(TextFormat::RED . "$this->prefix You cannot do that here... :c");
-    }
-
+                   
     public function onInteract(PlayerInteractEvent $ev)
     {
         $player = $ev->getPlayer();

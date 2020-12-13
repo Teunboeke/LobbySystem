@@ -52,7 +52,7 @@ use TrenicHD\utils\Scoreboard;
 
 class Main extends PluginBase implements Listener {
 
-    public $prefix = ""; //*<----- Your server name here!//*
+    public $prefix = "BoekeCraft"; //*<----- Your server name here!//*
 
     public function onLoad(): void
     {
@@ -151,7 +151,7 @@ class Main extends PluginBase implements Listener {
             Scoreboard::removeScoreboard($online, "BoekeCraft");
             Scoreboard::createScoreboard($online, "$this->prefix", "BoekeCraft");
             Scoreboard::setScoreboardEntry($online, 1, "   ", "BoekeCraft");
-            Scoreboard::setScoreboardEntry($online, 2, "§r§fSpieler:", "BoekeCraft");
+            Scoreboard::setScoreboardEntry($online, 2, "§r§fPlayers:", "BoekeCraft");
             Scoreboard::setScoreboardEntry($online, 3, "§r   " . $online->getNameTag(), "BoekeCraft");
         }
     }

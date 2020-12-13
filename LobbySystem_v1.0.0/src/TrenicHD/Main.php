@@ -2,7 +2,6 @@
                                                                                                                  
 namespace TrenicHD;
 
-
 use pocketmine\block\Sandstone;
 use pocketmine\entity\Effect;
 use pocketmine\event\player\PlayerRespawnEvent;

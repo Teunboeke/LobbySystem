@@ -119,7 +119,6 @@ class Main extends PluginBase implements Listener {
         }
         $this->getLogger()->warning("§a§lConfig will be loaded!");
         $this->getLogger()->info(TextFormat::GOLD . "LobbySystem by Teunboeke & TrenicHD");
-        $this->getLogger()->warning(TextFormat::GOLD . "By Teunboeke & TrenicHD");
         
         $config->save();
 
@@ -326,7 +325,7 @@ class Main extends PluginBase implements Listener {
             }
         });
         $form->setTitle("§b------Info-------");
-        $form->setContent("Plugin by Teunboeke & TrenicHD");
+        $form->setContent("§aWelcome to BoekeCraft");
         $form->addButton("§cExit");
         $form->sendToPlayer($player);
         return true;
@@ -654,7 +653,7 @@ class Main extends PluginBase implements Listener {
         $player->setFood($config->get("food"));
         $player->setMaxHealth($config->get("heal"));
         $player->getlevel()->addSound(new AnvilFallSound($player));
-        $player->sendMessage($this->prefix . "§aInventar auf Normal gewechselt!");
+        $player->sendMessage($this->prefix . "§aInventar set to normal!");
     }
     public function inve($player){
         $config = new Config($this->getDataFolder() . "config.yml" , Config::YAML);
@@ -731,7 +730,7 @@ class Main extends PluginBase implements Listener {
                     break;
             }
         });
-        $form->setTitle("§5----Spieler Menü------");
+        $form->setTitle("§5----Player Menu------");
         $form->setContent("§aPlayer Menu");
         $form->addButton("§6Show §aPlayer");
         $form->addButton("§6Players §cinvisbel");
@@ -748,7 +747,7 @@ class Main extends PluginBase implements Listener {
         $config = new Config($this->getDataFolder() . "config.yml" , Config::YAML);
         $player->getInventory()->clearAll();
         $player->getArmorInventory()->clearAll();
-        $player->getInventory()->setItem(0, Item::get(369)->setCustomName("§r§6Spieler §2Anzeigen"));
+        $player->getInventory()->setItem(0, Item::get(369)->setCustomName("§r§6Show §2Players"));
         $player->getInventory()->setItem(2, Item::get(341)->setCustomName("§r§aLobby"));
         $player->getInventory()->setItem(4, Item::get(345)->setCustomName("§r§6Compass"));
         $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§r§5Features"));
@@ -760,7 +759,7 @@ class Main extends PluginBase implements Listener {
         $player->setXpLevel($config->get("level"));
         $player->setFood($config->get("food"));
         $player->setMaxHealth($config->get("heal"));
-        $player->sendMessage($this->prefix . "§aDu siehst ALLE Spieler");
+        $player->sendMessage($this->prefix . "§aYou see all players now");
     }
 
     public function hidePlayer($player){
@@ -770,7 +769,7 @@ class Main extends PluginBase implements Listener {
         $config = new Config($this->getDataFolder() . "config.yml" , Config::YAML);
         $player->getInventory()->clearAll();
         $player->getArmorInventory()->clearAll();
-        $player->getInventory()->setItem(0, Item::get(280)->setCustomName("§r§6Spieler §cUnsichtbar"));
+        $player->getInventory()->setItem(0, Item::get(280)->setCustomName("§r§6Players §cinvisbel"));
         $player->getInventory()->setItem(2, Item::get(341)->setCustomName("§r§aLobby"));
         $player->getInventory()->setItem(4, Item::get(345)->setCustomName("§r§6Compass"));
         $player->getInventory()->setItem(8, Item::get(130)->setCustomName("§r§5Features"));
@@ -782,7 +781,7 @@ class Main extends PluginBase implements Listener {
         $player->setXpLevel($config->get("level"));
         $player->setFood($config->get("food"));
         $player->setMaxHealth($config->get("heal"));
-        $player->sendMessage($this->prefix . "§aDu siehst KEINE Spieler");
+        $player->sendMessage($this->prefix . "§aYou don't see players now");
 
     }
 
@@ -809,11 +808,11 @@ class Main extends PluginBase implements Listener {
                     break;
             }
         });
-        $form->setTitle("§5----Spieler Menü------");
-        $form->setContent("§aSpieler Menü");
-        $form->addButton("§6Spieler §aAnzeigen");
-        $form->addButton("§6Spieler §cUnsichtbar");
-        $form->addButton("§cVerlassen");
+        $form->setTitle("§5----Player Menu------");
+        $form->setContent("§aPlayer Menu");
+        $form->addButton("§6Show §aPlayers");
+        $form->addButton("§6Players §cInvisbel");
+        $form->addButton("§cExit");
         $form->sendToPlayer($player);
         return true;
     }
